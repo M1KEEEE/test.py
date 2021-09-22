@@ -1,4 +1,4 @@
-otvet_polsovatelya = input("Куда ехать? ")
-if otvet_polsovatelya == "1" or otvet_polsovatelya == "2" or otvet_polsovatelya == "3":
-    print("выбрал дорого 1, 2, 3")
-print("Конец")
+otvet_polsovatelya = ""
+while otvet_polsovatelya not in("1", "2", "3"): 
+    otvet_polsovatelya = input("Куда ехать? ")
+print("выбрал дорогу 1, 2, 3")

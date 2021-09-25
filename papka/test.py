@@ -6,9 +6,9 @@ way3 = "0"
 
 print("Вы находитесь у камня")
 print("Выбирайте свой путь")
-print("1 - ")
-print("2 - ")
-print("3 - ")
+print("1 дорога - ")
+print("2 дорога - ")
+print("3 дорога - ")
 
 while user_choise not in("1", "2", "3"): 
     user_choise = input("Что вы выберете?")

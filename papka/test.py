@@ -1,52 +1,39 @@
-level = "0"
-user_choise = ""
-way1 = "0"
-way2 = "0"
-way3 = "0"
+def show_main_location():
+    print("Вы сидите в убежище")
+    print("1 - пойти в казино")
+    print("2 - подождать")
 
-print("Вы находитесь у камня")
-print("Выбирайте свой путь")
-print("1")
-print("2")
-print("3")
+    user_choice = ""
+    while user_choice not in ("1", "2"):
+        user_choice = input("введите номер варианта и нажмите Enter ")
 
-while user_choise not in("1", "2", "3"): 
-    user_choise = input("Что вы выберете? ")
+    if user_choice == "1":
+        show_casino_location()
+    else:
+        print("Вы ждёте")
+        show_main_location()
 
-level = level +"1"
 
-if level == "01":
-    print("Дорога 1")
-    print("Вы попали к разбойникам")
-    print("У вас есть 3 варианта")
-    print("Сделайте свой выбор")
-    print("Варианты")
-    print("1 - Сдаться")
-    print("2 - Попытаться победить всех разбойников")
-    print("3 - Пойти домой")
+def show_casino_location():
+    print("Вы попопали в казино")
+    print("1 - оставить тут все деньги")
+    print("2 - уйти")
 
-elif level == "02":
-    print("Дорога 2")
-    print("Вы заблудились в лесу")
-    print("У вас есть 3 варианта")
-    print("Сделайте свой выбор")
-    print("Варианты")
-    print("1 - Бродить по лесу в поисках выхода")
-    print("2 - Сидеть и плакать")
-    print("3 - Звать на помощь")
+    user_choice = ""
+    while user_choice not in ("1", "2"):
+        user_choice = input("введите номер варианта и нажмите Enter ")
 
-else: 
-    print("Дорога 3")
-    print("Вы нашли сундук с золотом")
-    print("У вас есть 3 варианта")
-    print("Сделайте свой выбор")
-    print("Варианты")
-    print("1 - Забрать всё золото себе")
-    print("2 - Не брать золото")
-    print("3 - Поделиться золотом с друзьями")
+    if user_choice == "1":
+        show_pomoyka_location()
+    else:
+        print("Вы пошли в убежище")
+        show_main_location()
 
-user_choise = ""
-while user_choise not in("1", "2"): 
-    user_choise = input("Что вы выберете? ")
 
-level = level + user_choise
+def show_pomoyka_location():
+    print("Вы остались без дома и денег")
+    print("Проигрыш")
+
+
+show_main_location()
+input("Нажмите Enter для выхода")

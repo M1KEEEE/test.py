@@ -75,10 +75,17 @@ def show_gamble():
         print("Вы проиграли")
         user_money -= user_bet
         print("У вас теперь", user_money, "денег")
+    if user_money <= 0:
+        print("У вас закончились деньги")
+        input("Нажмите ENTER чтобы вернуться в домой")
+        show_location_home()
     else:
         print("Ничья")
     input("Нажмите ENTER чтобы вернуться в казино")
     show_location_casino()
+    if user_money <= 0:
+        print("У вас закончились деньги")
+        show_location_home()
 
 # игра началась здесь
 create_user()

@@ -11,18 +11,20 @@ def create_user():
 
 
 def show_location_home():
-    # описываем место
+    """
+        Попадаем на начальную локацию - дом
+    """
     os.system("cls")
     print("Вы дома")
     print("1 - в казино")
     print("2 - ждать")
 
-    # спросить пользователя
+    # спрашиваем у пользователя
     user_choice = ""
     while user_choice not in ("1", "2"):
         user_choice = input("введите номер варианта и нажмите Enter ")
 
-    # проверить ответ пользователя
+    # проверяем ответ пользователя
     if user_choice == "1":
         show_location_casino()
     else:
@@ -32,19 +34,21 @@ def show_location_home():
 
 
 def show_location_casino():
-    # описываем место
+    """
+        Попадаем на локацию казино
+    """
     os.system("cls")
     print("Вы в казино")
     print("1 - домой")
     print("2 - ждать")
     print("3 - сыграть")
 
-    # спросить пользователя
+    # спрашиваем у пользователя
     user_choice = ""
     while user_choice not in ("1", "2", "3"):
         user_choice = input("введите номер варианта и нажмите Enter ")
 
-    # проверить ответ пользователя
+    # проверяем ответ пользователя
     if user_choice == "1":
         show_location_home()
     elif user_choice == "2":

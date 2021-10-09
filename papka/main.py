@@ -51,45 +51,63 @@ def show_location_casino():
     # проверяем ответ пользователя
     if user_choice == "1":
         show_location_home()
-    elif user_choice == "2":
+    if user_choice == "2":
         print("жду")
         os.system("cls")
         show_location_casino()
-    else:
-        show_gamble()
+    if user_choice == "3":
+        play_dice(user_money)
 
 
-def show_gamble():
-    global user_money
+def play_dice(user_money):
     print("Сейчас у вас", user_money, "денег")
     user_dice = random.randint(2, 12)
     casino_dice = random.randint(2, 12)
     user_bet = int(input("Сколько вы хотите поставить? "))
+
+    #роверка наличия денег
     if user_bet > user_money:
-        print("У вас не столько денег")
-        show_gamble()
+        print("У вас нет столько денег!")
+        play_dice(user_money)
+
+    #проверка привильности ставки
+    if user_bet <=0:
+        print("Вы не можете поставить так мало!") 
+        play_dice(user_money)
     else:
         print(f"Вы бросили кости, выпало {user_dice}")
         print(f"Казино кости, выпало {casino_dice}")
+
     if user_dice > casino_dice:
         print("Вы победили")
         user_money += user_bet
-        print("У вас теперь", user_money, "денег")
-    elif user_dice < casino_dice:
+        print("Теперь у вас", user_money, "денег")
+        play_dice(user_money)
+
+    if user_dice < casino_dice:
         print("Вы проиграли")
         user_money -= user_bet
-        print("У вас теперь", user_money, "денег")
-    if user_money <= 0:
+        print("Теперь у вас", user_money, "денег")
+    if user_money == 0:
         print("У вас закончились деньги")
         input("Нажмите ENTER чтобы вернуться в домой")
         show_location_home()
     else:
+        play_dice(user_money)
+
+    if user_dice == casino_dice:
         print("Ничья")
-    input("Нажмите ENTER чтобы вернуться в казино")
-    show_location_casino()
-    if user_money <= 0:
+        print("У вас всё ещё", user_money, "денег")
+        play_dice(user_money)
+
+    if user_money == 0:
         print("У вас закончились деньги")
+        input("Нажмите ENTER чтобы вернуться в домой")
         show_location_home()
+        user_money += 5000
+    else:
+        play_dice(user_money)
+
 
 # игра началась здесь
 create_user()

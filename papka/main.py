@@ -77,14 +77,17 @@ def play_dice(user_money):
     else:
         print(f"Вы бросили кости, выпало {user_dice}")
         print(f"Казино кости, выпало {casino_dice}")
-
     if user_dice > casino_dice:
         print("Вы победили")
         user_money += user_bet
         print("Теперь у вас", user_money, "денег")
         play_dice(user_money)
-
-    if user_dice < casino_dice:
+    elif user_dice == casino_dice:
+        print("Ничья")
+        print("У вас всё ещё", user_money, "денег")
+        play_dice(user_money)
+    else:
+        user_dice < casino_dice
         print("Вы проиграли")
         user_money -= user_bet
         print("Теперь у вас", user_money, "денег")
@@ -92,22 +95,7 @@ def play_dice(user_money):
         print("У вас закончились деньги")
         input("Нажмите ENTER чтобы вернуться в домой")
         show_location_home()
-    else:
-        play_dice(user_money)
-
-    if user_dice == casino_dice:
-        print("Ничья")
-        print("У вас всё ещё", user_money, "денег")
-        play_dice(user_money)
-
-    if user_money == 0:
-        print("У вас закончились деньги")
-        input("Нажмите ENTER чтобы вернуться в домой")
-        show_location_home()
         user_money += 5000
-    else:
-        play_dice(user_money)
-
 
 # игра началась здесь
 create_user()

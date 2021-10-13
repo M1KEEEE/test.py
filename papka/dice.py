@@ -1,5 +1,6 @@
 import random
-import main 
+import main
+
 def play_dice(user_money):
     print("Сейчас у вас", user_money, "денег")
     user_dice = random.randint(2, 12)

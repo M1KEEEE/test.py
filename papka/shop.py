@@ -30,7 +30,7 @@ def show_location(user_name, user_money, user_inventory):
             user_money -= potion_prise
             user_inventory.append("зелье")
             print(f"{user_name} купил зелье.")
-            input("ENTER — дальше")
+            is_in_shop = True
 
         # пытаемся купить зелье, денег не хватает
         elif user_choise == "1" and user_money < potion_prise:

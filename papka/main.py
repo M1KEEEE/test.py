@@ -34,7 +34,7 @@ while game:
         for item in user_inventory:
             print("•", item)
         print("----------")
-        print(f"{user_name} сидит у костра в лагере. Отсюда можно отправиться в разные места.")
+        print(f"{user_name} сидит в лагере. Чем вы хотите заняться?")
         print("1 — Зайти в лавку к алхимику")
         print("2 — Выйти из игры")
         user_choise = input("Что делать? ")

@@ -13,7 +13,7 @@ def show_location(user_name, user_money, user_inventory):
         user_choise = "0"
         while user_choise not in ("1", "2"):
             os.system("cls")
-            print(f"{user_name} зашел в лавку алхимика. Тут уютно, но странно пахнет.")
+            print(f"{user_name} зашел в лавку алхимика.")
             print(f"деньги: {user_money}")
             print(f"инвентарь:")
             for item in user_inventory:

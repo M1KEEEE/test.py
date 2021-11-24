@@ -4,7 +4,6 @@ import gun_shop # магазин оружия
 import arena  # арена
 
 
-
 # создаем персонажа
 user_name = "Вася Питонов" 
 user_money = 5000

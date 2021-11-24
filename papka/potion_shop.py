@@ -1,5 +1,5 @@
 import os
-import arena
+
 
 def show_location(user_name, user_money, user_inventory):
     is_in_potion_shop = True
